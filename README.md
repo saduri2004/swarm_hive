@@ -1,5 +1,18 @@
 ![Swarm Logo](assets/logo.png)
 
+
+# Contributions
+
+I am adding an experimental extension to Swarm's memory capabilities by introducing a basic shared memory model across agents. My addition includes:
+
+- **Global Memory Management:** I’ve implemented memory as a global string in JSON format with fuzzy enforcement, enabling a shared state across agent interactions.
+- **Read and Write Mechanism:** With each query, the system retrieves relevant memory objects using completions calls. Upon completing a response, new information is stored back into memory, establishing a simple stateful interaction model.
+- **Example Implementation in `core.py`:** For demonstration, I’ve included the core logic within `core.py`. This showcases how memory transactions are logged and how the shared state impacts agent handoffs, illustrating potential gains in reducing redundant communication.
+
+This addition is a preliminary step towards more efficient stateful management in multi-agent systems using Swarm. The goal is to explore further optimizations and discuss potential refinements to make memory management more robust and scalable. Feedback and collaboration are welcome as we continue experimenting with this approach!
+
+
+
 # Swarm (experimental, educational)
 
 An educational framework exploring ergonomic, lightweight multi-agent orchestration.
