@@ -1,0 +1,83 @@
+==================================================
+ Welcome to Grand Hotel AI Assistant 🏨
+==================================================
+You can chat with our hotel staff about:
+- Room bookings and modifications
+- Restaurant reservations and room service
+- Maintenance requests
+- Local attractions and general inquiries
+Type 'exit' to end the conversation
+==================================================
+
+
+👤 You: I want to make a reservation 
+
+MEMORY READ: {}
+MEMORY WRITE: {}
+
+👤 Staff: {"assistant": "Booking Specialist"}
+
+👤 Booking Specialist: Great, I'd be happy to help you with that! Could you please provide me with the following details for your reservation:
+- Check-in and check-out dates
+- Number of guests
+- Room preference (if any)
+- Any special requests or accommodations needed
+
+This will help me find the best available options for you.
+
+==================================================
+🔄 Transferring: Concierge → Booking Specialist
+==================================================
+
+👤 You: I am planning on checking in on 12/4 and checkout on 12/9. It'll be 3 guests and I want a standard room, preferably non-smoking or no-pets.
+
+MEMORY READ: {}
+MEMORY WRITE: {
+  "reservation": {
+    "check_in_date": "2023-12-04",
+    "check_out_date": "2023-12-09",
+    "number_of_guests": 3,
+    "room_type": "Standard",
+    "preferences": ["Non-smoking", "No-pets"]
+  }
+}
+
+👤 Staff: Room booked successfully: {'kwargs': '{"check_in_date":"2023-12-04","check_out_date":"2023-12-09","number_of_guests":3,"room_type":"standard","preferences":{"non_smoking":true,"no_pets":true}}'}
+
+👤 Booking Specialist: Your reservation has been successfully made! Here are the details of your booking:
+- **Check-in Date:** 2023-12-04
+- **Check-out Date:** 2023-12-09
+- **Number of Guests:** 3
+- **Room Type:** Standard
+- **Preferences:** Non-smoking, No-pets
+
+If you have any more requests or need to make any changes, feel free to let me know!
+
+👤 You: Can you upgrade my room to deluxe?
+
+MEMORY READ: {
+  "reservation": {
+    "check_in_date": "2023-12-04",
+    "check_out_date": "2023-12-09",
+    "number_of_guests": 3,
+    "room_type": "Standard",
+    "preferences": ["Non-smoking", "No-pets"]
+  }
+}
+
+MEMORY WRITE: {
+  "reservation": {
+    "check_in_date": "2023-12-04",
+    "check_out_date": "2023-12-09",
+    "number_of_guests": 3,
+    "room_type": "Deluxe",
+    "preferences": ["Non-smoking", "No-pets"]
+  }
+}
+
+👤 Staff: Booking modified successfully. New details: {'kwargs': '{"new_room_type":"Deluxe"}'}
+
+👤 Booking Specialist: Your room has been successfully upgraded to Deluxe. Here are your updated booking details:
+- **Room Type:** Deluxe
+
+Everything else remains the same. If there's anything more I can help you with, just let me know!
